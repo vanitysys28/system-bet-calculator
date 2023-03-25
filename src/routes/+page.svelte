@@ -21,7 +21,7 @@ const systems = arrayRange(2,15,1);
 let success = '' 
 let trial = '' 
 let stake = ''
-let odd = ''
+let bets = []
 
 $: rows = binomialCoefficient(trial, success);
 $: unitStake = (stake / rows).toFixed(2)
@@ -47,7 +47,7 @@ Mise totale:  <input bind:value={stake}>
 Paris:
 {#each betRow as bet}
 <div>
-Pari {bet}:   <input bind:value={odd}>
+Pari {bet}:  
 </div>
 {/each}
 </div>
