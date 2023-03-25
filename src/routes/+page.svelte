@@ -10,14 +10,22 @@ const binomialCoefficient = (k, n) => {
   return Math.round(res);
 };
 
-const systems = [2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+const arrayRange = (start, stop, step) =>
+    Array.from(
+    { length: (stop - start) / step + 1 },
+    (value, index) => start + index * step
+    );
+
+const systems = arrayRange(2,15,1);
 
 let success = '' 
 let trial = '' 
 let stake = ''
+let odd = ''
 
 $: rows = binomialCoefficient(success, trial);
 $: unitStake = (stake / rows).toFixed(2)
+$: betRow = arrayRange(1,trial,1)
 </script>
 
 
@@ -33,6 +41,16 @@ $: unitStake = (stake / rows).toFixed(2)
 
 <div>
 Mise totale:  <input bind:value={stake}>
+</div>
+
+<div>
+Paris:
+{#each betRow as bet}
+
+<div>
+Pari {bet}:   <input bind:value={odd}>
+</div>
+{/each}
 </div>
 
 <div>
