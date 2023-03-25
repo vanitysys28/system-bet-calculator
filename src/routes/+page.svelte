@@ -1,5 +1,5 @@
 <script>
-const binomialCoefficient = (k, n) => {
+const binomialCoefficient = (n, k) => {
   if (Number.isNaN(n) || Number.isNaN(k)) return NaN;
   if (k < 0 || k > n) return 0;
   if (k === 0 || k === n) return 1;
@@ -23,7 +23,7 @@ let trial = ''
 let stake = ''
 let odd = ''
 
-$: rows = binomialCoefficient(success, trial);
+$: rows = binomialCoefficient(trial, success);
 $: unitStake = (stake / rows).toFixed(2)
 $: betRow = arrayRange(1,trial,1)
 </script>
@@ -46,7 +46,6 @@ Mise totale:  <input bind:value={stake}>
 <div>
 Paris:
 {#each betRow as bet}
-
 <div>
 Pari {bet}:   <input bind:value={odd}>
 </div>
@@ -59,4 +58,8 @@ Nombre de paris: {#if rows > 1} {rows} {/if}
 
 <div>
 Mise unitaire: {unitStake}
+</div>
+
+<div>
+Gains: 
 </div>
