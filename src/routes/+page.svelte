@@ -25,10 +25,6 @@ function* combinationN(array, n) {
   }
 }
 
-//for (const c of combinationN(array, 4)) {
-//console.log(c);
-//}
-
 const arrayRange = (start, stop, step) =>
     Array.from(
     { length: (stop - start) / step + 1 },
@@ -37,8 +33,6 @@ const arrayRange = (start, stop, step) =>
 
 const systems = arrayRange(2,15,1);
 
-console.log(systems)
-
 let success = '' 
 let trial = '' 
 let totalStake = ''
@@ -46,9 +40,14 @@ let bets = []
 
 $: rows = binomialCoefficient(trial, success);
 $: unitStake = (totalStake / rows).toFixed(2)
-$: odds = new Array(trial)
+$: odds = new Array(trial).fill(null)
 
-$: console.log(odds) 
+$: if (odds.every(element => element !== null)) {
+for (const c of combinationN(odds, success)) {
+console.log(c);
+}
+}
+
 </script>
 
 
