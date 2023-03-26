@@ -37,17 +37,21 @@ let success = ''
 let trial = '' 
 let totalStake = ''
 let bets = []
+let combinationReturns = []
+let totalReturn = 0 
 
 $: rows = binomialCoefficient(trial, success);
 $: unitStake = (totalStake / rows).toFixed(2)
 $: odds = new Array(trial).fill(null)
 
 $: if (odds.every(element => element !== null)) {
+combinationReturns = [] 
 for (const c of combinationN(odds, success)) {
-console.log(c);
+combinationReturns.push(unitStake * c);
 }
 }
 
+$: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }, 0).toFixed(2)
 </script>
 
 
@@ -75,7 +79,7 @@ Pari {i + 1}:  <input bind:value={bet} placeholder="">
 </div>
 
 <div>
-Nombre de paris: {#if rows > 1} {rows} {/if}
+Nombre de paris générés: {#if rows > 1} {rows} {/if}
 </div>
 
 <div>
@@ -83,5 +87,5 @@ Mise unitaire: {unitStake}
 </div>
 
 <div>
-Gains: 
+Gains: {totalReturn}
 </div>
