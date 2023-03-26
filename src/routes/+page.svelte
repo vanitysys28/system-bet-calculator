@@ -10,6 +10,25 @@ const binomialCoefficient = (n, k) => {
   return Math.round(res);
 };
 
+function* combinationN(array, n) {
+  if (n === 1) {
+    for (const a of array) {
+      yield [a];
+    }
+    return;
+  }
+
+  for (let i = 0; i <= array.length - n; i++) {
+    for (const c of combinationN(array.slice(i + 1), n - 1)) {
+      yield [array[i] * c];
+    }
+  }
+}
+
+//for (const c of combinationN(array, 4)) {
+//console.log(c);
+//}
+
 const arrayRange = (start, stop, step) =>
     Array.from(
     { length: (stop - start) / step + 1 },
