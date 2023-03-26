@@ -33,10 +33,11 @@ const arrayRange = (start, stop, step) =>
 
 const systems = arrayRange(2,15,1);
 
+const outcomes = ["Gagné","Perdu","Void"]
+
 let success = '' 
 let trial = '' 
 let totalStake = ''
-let bets = []
 let combinationReturns = []
 let totalReturn = 0 
 
@@ -49,6 +50,7 @@ combinationReturns = []
 for (const c of combinationN(odds, success)) {
 combinationReturns.push(unitStake * c);
 }
+console.log(combinationReturns)
 }
 
 $: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }, 0).toFixed(2)
@@ -70,12 +72,19 @@ Mise totale:  <input bind:value={totalStake}>
 </div>
 
 <div>
+{#if odds.length > 2}
 Paris:
 {#each odds as bet,i}
 <div>
 Pari {i + 1}:  <input bind:value={bet} placeholder="">
+<select>
+{#each outcomes as outcome}
+<option {outcome}>{outcome}</option>
+{/each}
+</select>
 </div>
 {/each}
+{/if}
 </div>
 
 <div>
