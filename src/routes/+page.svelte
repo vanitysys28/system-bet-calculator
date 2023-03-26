@@ -37,14 +37,18 @@ const arrayRange = (start, stop, step) =>
 
 const systems = arrayRange(2,15,1);
 
+console.log(systems)
+
 let success = '' 
 let trial = '' 
-let stake = ''
+let totalStake = ''
 let bets = []
 
 $: rows = binomialCoefficient(trial, success);
-$: unitStake = (stake / rows).toFixed(2)
-$: betRow = arrayRange(1,trial,1)
+$: unitStake = (totalStake / rows).toFixed(2)
+$: odds = new Array(trial)
+
+$: console.log(odds) 
 </script>
 
 
@@ -59,14 +63,14 @@ $: betRow = arrayRange(1,trial,1)
 </select>
 
 <div>
-Mise totale:  <input bind:value={stake}>
+Mise totale:  <input bind:value={totalStake}>
 </div>
 
 <div>
 Paris:
-{#each betRow as bet}
+{#each odds as bet,i}
 <div>
-Pari {bet}:  
+Pari {i + 1}:  <input bind:value={bet} placeholder="">
 </div>
 {/each}
 </div>
