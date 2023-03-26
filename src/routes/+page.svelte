@@ -32,25 +32,23 @@ const arrayRange = (start, stop, step) =>
     );
 
 const systems = arrayRange(2,15,1);
-
 const outcomes = ["Gagné","Perdu","Void"]
 
-let success = '' 
-let trial = '' 
-let totalStake = ''
+let combinations = '' 
+let selections = '' 
 let combinationReturns = []
+let totalStake = ''
 let totalReturn = 0 
 
-$: rows = binomialCoefficient(trial, success);
-$: unitStake = (totalStake / rows).toFixed(2)
-$: odds = new Array(trial).fill(null)
+$: totalBets = binomialCoefficient(selections, combinations);
+$: unitStake = (totalStake / totalBets).toFixed(2)
+$: odds = new Array(selections).fill(null)
 
 $: if (odds.every(element => element !== null)) {
 combinationReturns = [] 
-for (const c of combinationN(odds, success)) {
+for (const c of combinationN(odds, combinations)) {
 combinationReturns.push(unitStake * c);
 }
-console.log(combinationReturns)
 }
 
 $: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }, 0).toFixed(2)
@@ -59,11 +57,11 @@ $: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }
 
 <h1>Calculateur Pari Système</h1>
 
-<select bind:value={success}>
+<select bind:value={combinations}>
 {#each systems as value}<option {value}>{value}</option>{/each}
 </select>
 
-<select bind:value={trial}>
+<select bind:value={selections}>
 {#each systems as value}<option {value}>{value}</option>{/each}
 </select>
 
@@ -77,7 +75,7 @@ Paris:
 {#each odds as bet,i}
 <div>
 Pari {i + 1}:  <input bind:value={bet} placeholder="">
-<select>
+<select id="outcome">
 {#each outcomes as outcome}
 <option {outcome}>{outcome}</option>
 {/each}
@@ -88,7 +86,7 @@ Pari {i + 1}:  <input bind:value={bet} placeholder="">
 </div>
 
 <div>
-Nombre de paris générés: {#if rows > 1} {rows} {/if}
+Nombre de paris générés: {#if totalBets > 1} {totalBets} {/if}
 </div>
 
 <div>
