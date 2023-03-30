@@ -11,13 +11,6 @@ const binomialCoefficient = (n, k) => {
 };
 
 function* combinationN(array, n, outcomes) {
-  if (n === 1) {
-    for (const a of array) {
-      yield [a];
-    }
-    return;
-  }
-
   for (let i = 0; i <= array.length - n; i++) {
     for (const c of combinationN(array.slice(i + 1), n - 1)) {
       if(outcomes[i].outcome == "Gagné") {
@@ -46,7 +39,7 @@ const outcomes = ["Gagné","Perdu","Void"]
 let combinations = 2  
 let selections = 0 
 let combinationReturns = []
-let totalStake 
+let totalStake = 50 
 let totalReturn = 0 
 
 $: totalBets = binomialCoefficient(selections, combinations);
