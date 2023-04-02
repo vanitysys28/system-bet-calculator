@@ -19,8 +19,8 @@ const createArrayRange = (start, stop, step) =>
     );
 
 let combinations = 2  
-let selections = 2 
-let totalStake = 50   
+let selections = 4 
+let totalStake = 100   
 let combinationReturns = []
 let totalReturn = 0 
 
@@ -40,6 +40,9 @@ function addOdds(selections) {
     })
 }
 
+// TODO: Find a way to make odds appear without calling the function
+addOdds(selections)
+
 function checkOutcomes(odd, i) {
     if (odds[i].outcome == "Gagné") {
 			  return odds[i].value
@@ -57,12 +60,12 @@ $: combinationIterator = C.Combination.of(values, combinations);
 $: if (totalStake) {
 combinationReturns = []
 for (let i = 0; i <= [...combinationIterator].length - 1; i++) {
-combinationReturns.push([...combinationIterator][i].reduce( (a, b) => a * b ) * unitStake)
+combinationReturns.push([...combinationIterator][i].reduce((a, b) => a * b ) * unitStake)
 }
 }
 
 $: odds, values = odds.map(checkOutcomes); 
-$: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }, 0).toFixed(2)
+$: odds, totalReturn = combinationReturns.reduce((a,b) => a + b).toFixed(2)
 </script>
 
 
