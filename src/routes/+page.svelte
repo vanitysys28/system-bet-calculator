@@ -39,6 +39,18 @@ odds.forEach((odd, i) => {
  })
 }
 
+function checkOutcomes(odd, i) {
+		if (odds[i].outcome == "Gagné") {
+			return odds[i].value
+		}
+		if (odds[i].outcome == "Perdu") {
+			return 0
+		}
+		if (odds[i].outcome == "Void") {
+			return 1
+		}
+	}
+
 $: combinationIterator = C.Combination.of(values, combinations);
 
 $: if (totalStake) {
@@ -48,7 +60,7 @@ combinationReturns.push([...combinationIterator][i].reduce( (a, b) => a * b ) * 
 }
 }
 
-$: odds, values = odds.map(odd => odd.value);
+$: odds, values = odds.map(checkOutcomes); 
 $: odds, totalReturn = combinationReturns.reduce(function(a,b) { return a + b; }, 0).toFixed(2)
 </script>
 
