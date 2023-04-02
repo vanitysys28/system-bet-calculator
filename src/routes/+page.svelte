@@ -2,14 +2,14 @@
 import * as C from 'js-combinatorics';
 
 const getBinomialCoefficient = (n, k) => {
-  if (Number.isNaN(n) || Number.isNaN(k)) return null;
-  if (k < 0 || k > n) return 0;
-  if (k === 0 || k === n) return 1;
-  if (k === 1 || k === n - 1) return n;
-  if (n - k < k) k = n - k;
-  let res = n;
-  for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
-  return Math.round(res);
+    if (Number.isNaN(n) || Number.isNaN(k)) return null;
+    if (k < 0 || k > n) return 0;
+    if (k === 0 || k === n) return 1;
+    if (k === 1 || k === n - 1) return n;
+    if (n - k < k) k = n - k;
+    let res = n;
+    for (let j = 2; j <= k; j++) res *= (n - j + 1) / j;
+    return Math.round(res);
 };
 
 const createArrayRange = (start, stop, step) =>
@@ -18,38 +18,39 @@ const createArrayRange = (start, stop, step) =>
     (value, index) => start + index * step
     );
 
+let combinations = 2  
+let selections = 2 
+let totalStake = 50   
+let combinationReturns = []
+let totalReturn = 0 
+
 const systems = createArrayRange(2,15,1);
 const outcomes = ["Gagné","Perdu","Void"]
 
-let combinations = 2  
-let selections 
-let combinationReturns = []
-let totalStake   
-let totalReturn = 0 
-
-$: totalBets = getBinomialCoefficient(selections, combinations);
-$: unitStake = (totalStake / totalBets).toFixed(2)
 let odds = []
 let values = []
 
+$: totalBets = getBinomialCoefficient(selections, combinations);
+$: unitStake = (totalStake / totalBets).toFixed(2)
+
 function addOdds(selections) {
-odds = new Array(selections).fill()
-odds.forEach((odd, i) => {
-     odds[i] = {"value": "1.8","outcome":"Gagné"};
- })
+    odds = new Array(selections).fill()
+    odds.forEach((odd, i) => {
+    odds[i] = {"value": "1.8","outcome":"Gagné"};
+    })
 }
 
 function checkOutcomes(odd, i) {
-		if (odds[i].outcome == "Gagné") {
-			return odds[i].value
+    if (odds[i].outcome == "Gagné") {
+			  return odds[i].value
 		}
 		if (odds[i].outcome == "Perdu") {
-			return 0
+			  return 0
 		}
 		if (odds[i].outcome == "Void") {
-			return 1
+			  return 1
 		}
-	}
+}
 
 $: combinationIterator = C.Combination.of(values, combinations);
 
