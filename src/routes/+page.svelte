@@ -1,5 +1,5 @@
 <script>
-import * as C from 'js-combinatorics';
+import * as Combinatorics from 'js-combinatorics';
 
 const createArrayRange = (start, stop, step) =>
     Array.from(
@@ -7,7 +7,7 @@ const createArrayRange = (start, stop, step) =>
     (value, index) => start + index * step
     );
 
-let combinations = 2  
+let subset = 2  
 let selections = 4 
 let totalStake = 100   
 let combinationReturns = []
@@ -18,9 +18,6 @@ const outcomes = ["Gagné","Perdu","Void"]
 
 let odds = []
 let values = []
-
-$: totalBets =  [...combinationIterator].length 
-$: unitStake = (totalStake / totalBets).toFixed(2)
 
 function addOdds(selections) {
     odds = new Array(selections).fill()
@@ -44,23 +41,25 @@ function checkOutcomes(odd, i) {
 		}
 }
 
-$: combinationIterator = C.Combination.of(values, combinations);
+$: combinations = Combinatorics.combination(values, subset);
 
 $: if (totalStake) {
 combinationReturns = []
-for (let i = 0; i <= [...combinationIterator].length - 1; i++) {
-combinationReturns.push([...combinationIterator][i].reduce((a, b) => a * b ) * unitStake)
-}
+combinations.forEach(function(combination){
+combinationReturns.push(combination.reduce((a, b) => a * b ) * unitStake)
+})
 }
 
-$: odds, values = odds.map(checkOutcomes); 
-$: odds, totalReturn = combinationReturns.reduce((a,b) => a + b).toFixed(2)
+$: totalReturn = combinationReturns.reduce((a,b) => a + b).toFixed(2)
+$: totalBets =  combinations.length 
+$: unitStake = (totalStake / totalBets).toFixed(2)
+$: values = odds.map(checkOutcomes); 
 </script>
 
 
 <h1 class="text-3xl font-bold underline">Calculateur Pari Système</h1>
 
-<select bind:value={combinations}>
+<select bind:value={subset}>
 {#each systems as value}<option {value}>{value}</option>{/each}
 </select>
 
