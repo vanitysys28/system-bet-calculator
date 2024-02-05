@@ -13,7 +13,8 @@ let totalStake = 100
 let combinationReturns = []
 let totalReturn = 0 
 
-const systems = createArrayRange(2,15,1);
+$: subsetRange = createArrayRange(2,selections - 1,1);
+$: selectionRange = createArrayRange(subset + 1,15,1);
 const outcomes = ["Gagné","Perdu","Void"]
 
 let odds = []
@@ -26,7 +27,6 @@ function addOdds(selections) {
     })
 }
 
-// TODO: Find a way to make odds appear without calling the function
 addOdds(selections)
 
 function checkOutcomes(odd, i) {
@@ -60,11 +60,11 @@ $: values = odds.map(checkOutcomes);
 <h1 class="text-3xl font-bold underline">Calculateur Pari Système</h1>
 
 <select bind:value={subset}>
-{#each systems as value}<option {value}>{value}</option>{/each}
+{#each subsetRange as value}<option {value}>{value}</option>{/each}
 </select>
 
 <select bind:value={selections} on:change={addOdds(selections)}>
-{#each systems as value}<option {value}>{value}</option>{/each}
+{#each selectionRange as value}<option {value}>{value}</option>{/each}
 </select>
 
 <div>
