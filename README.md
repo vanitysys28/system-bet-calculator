@@ -2,10 +2,8 @@
 
 ## Purpose 
 
-No website with a modern stack was being available online to calculate system bet results.  
-Most of them are also populated with ads pointing to betting websites.
-
-This project aims to offer a solution to the two points highlighted above.
+Most system bet calculators are populated with ads pointing to betting websites.
+This project aims to offer a simple and modern solution for bettors placing these bets. 
 
 ## Developing
 
