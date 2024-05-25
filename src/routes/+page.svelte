@@ -15,7 +15,7 @@
 
  $: subsetRange = createArrayRange(2,selections - 1,1);
  $: selectionRange = createArrayRange(subset + 1,15,1);
- const outcomes = ["GagnÃ©","Perdu","Void"]
+ const outcomes = ["Gagné","Perdu","Void"]
 
  let odds = []
  let values = []
@@ -23,14 +23,14 @@
  function addOdds(selections) {
      odds = new Array(selections).fill()
      odds.forEach((odd, i) => {
-	 odds[i] = {"value": "1.8","outcome":"GagnÃ©"};
+	 odds[i] = {"value": "1.8","outcome":"Gagné"};
      })
  }
 
  addOdds(selections)
 
  function checkOutcomes(odd, i) {
-     if (odds[i].outcome == "GagnÃ©") {
+     if (odds[i].outcome == "Gagné") {
 	 return odds[i].value
      }
      if (odds[i].outcome == "Perdu") {
