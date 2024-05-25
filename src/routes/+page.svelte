@@ -76,14 +76,13 @@
 </select>
 
 <div>
-Mise totale:  <input bind:value={totalStake}>
+<input bind:value={totalStake}>
 </div>
 
 <div>
-Paris:
 {#each odds as bet,i}
 <div>
-Pari {i + 1}:  <input bind:value={bet.value} placeholder="">
+<input bind:value={bet.value} placeholder="">
 <select bind:value={bet.outcome}>
 {#each outcomes as outcome}
 <option {outcome}>{outcome}</option>
