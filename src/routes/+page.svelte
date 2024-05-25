@@ -15,7 +15,7 @@
 
  $: subsetRange = createArrayRange(2,selections - 1,1);
  $: selectionRange = createArrayRange(subset + 1,15,1);
- const outcomes = ["Gagné","Perdu","Void"]
+ const outcomes = ["GagnÃ©","Perdu","Void"]
 
  let odds = []
  let values = []
@@ -23,14 +23,14 @@
  function addOdds(selections) {
      odds = new Array(selections).fill()
      odds.forEach((odd, i) => {
-	 odds[i] = {"value": "1.8","outcome":"Gagné"};
+	 odds[i] = {"value": "1.8","outcome":"GagnÃ©"};
      })
  }
 
  addOdds(selections)
 
  function checkOutcomes(odd, i) {
-     if (odds[i].outcome == "Gagné") {
+     if (odds[i].outcome == "GagnÃ©") {
 	 return odds[i].value
      }
      if (odds[i].outcome == "Perdu") {
@@ -57,10 +57,17 @@
 
 </script>
 
+<main>
+    <div>    
+	<h1 class="text-3xl font-bold">Calculateur
+	    <span>
+		Pari Système
+	    </span>
+	</h1>
+ </div> 
 
-<h1 class="text-3xl font-bold">Calculateur Pari Système</h1>
-
-<select bind:value={subset}>
+ <div>
+ <select bind:value={subset}>
 {#each subsetRange as value}<option {value}>{value}</option>{/each}
 </select>
 
@@ -81,7 +88,7 @@ Pari {i + 1}:  <input bind:value={bet.value} placeholder="">
 {#each outcomes as outcome}
 <option {outcome}>{outcome}</option>
 {/each}
-</select>
+ </select>
 </div>
 {/each}
 </div>
@@ -95,7 +102,37 @@ Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
 </div>
 
 <div>
-Gains: {totalReturn}
+    Gains: {totalReturn}
 </div>
+ </div>
 
+ <h2>
+     Envie de tenter ta chance ?
+ </h2>
 
+ <span>
+     Inscris toi chez Unibet
+ </span>
+ <p>
+     Profite d'un bonus de bienvenue de 100€ si ton premier pari est perdant !
+ </p>
+ <p>
+     Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
+ </p>
+
+ <span>
+     Tu rencontres un problème
+ </span>
+ <span>
+     ou tu souhaites proposer une nouvelle fonctionnalité ?
+ </span>
+
+ <p>
+     Contacte-nous par email et fais-nous part de tes idées !
+ </p>
+
+ <p>
+     Made with 🤍 by Guillaume Aubert
+ </p>
+     
+</main>
