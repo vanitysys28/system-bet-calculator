@@ -1,5 +1,6 @@
 <script>
- import * as Combinatorics from 'js-combinatorics';
+ import pkg from 'js-combinatorics';
+ const { combination } = pkg;
 
  const createArrayRange = (start, stop, step) =>
      Array.from(
@@ -41,7 +42,7 @@
      }
  }
 
- $: combinations = Combinatorics.combination(values, subset);
+ $: combinations = combination(values, subset);
 
  $: if (totalStake) {
      combinationReturns = []
