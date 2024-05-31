@@ -58,14 +58,12 @@
 
 </script>
 
-<main>
-    <div>    
-	<h1 class="text-3xl font-bold">Calculateur
+<main> 
+	<h1 class="flex flex-col items-center text-3xl font-bold">Calculateur
 	    <span>
 		Pari Système
 	    </span>
-	</h1>
- </div> 
+	</h1> 
 
  <div>
  <select bind:value={subset}>
