@@ -106,11 +106,11 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
 	</div>
 
- <h2>
+ <h2 class="text-2xl font-bold">
      Envie de tenter ta chance ?
  </h2>
 
- <span>
+ <span class="text-xl font-bold">
      Inscris toi chez Unibet
  </span>
  <p>
@@ -120,13 +120,15 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
 
+ <h2 class="flex flex-col text-2xl font-bold">
  <span>
      Tu rencontres un problème
  </span>
  <span>
      ou tu souhaites proposer une nouvelle fonctionnalité ?
  </span>
-
+ </h2>
+ 
  <p>
      Contacte-nous par email et fais-nous part de tes idées !
  </p>
