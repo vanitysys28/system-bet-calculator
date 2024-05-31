@@ -65,33 +65,33 @@
 	    </span>
 	</h1> 
 
-	<div class ="border rounded-md border-neutral-700 p-2 w-max">
-	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={subset}>
+	<div class ="bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
 	    </select>
 
-	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={selections} on:change={addOdds(selections)}>
-    {#each selectionRange as value}<option {value}>{value}</option>{/each}
-</select>
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={selections} on:change={addOdds(selections)}>
+		{#each selectionRange as value}<option {value}>{value}</option>{/each}
+	    </select>
 
-<div>
-    <input class="border rounded-md border-neutral-700 bg-inherit" bind:value={totalStake}>
+	    <div>
+		<input class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={totalStake}>
 </div>
 
 <div>
     {#each odds as bet,i}
 	<div>
-	    <input class="border rounded-md border-neutral-700 bg-inherit" bind:value={bet.value} placeholder="">
-	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={bet.outcome}>
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={bet.value} placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={bet.outcome}>
 {#each outcomes as outcome}
-<option {outcome}>{outcome}</option>
+    <option {outcome}>{outcome}</option>
 {/each}
- </select>
-</div>
-{/each}
+	    </select>
+	</div>
+    {/each}
 </div>
 
-<div class ="border rounded-md border-neutral-700 p-2 w-max">
+<div class ="border rounded-md border-neutral-700 p-2 w-max bg-neutral-900">
     <div>
 	Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
     </div>
