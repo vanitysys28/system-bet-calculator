@@ -66,23 +66,23 @@
 	</h1> 
 
 	<div class ="border rounded-md border-neutral-700 p-2 w-max">
- <select bind:value={subset}>
-{#each subsetRange as value}<option {value}>{value}</option>{/each}
-</select>
+	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={subset}>
+		{#each subsetRange as value}<option {value}>{value}</option>{/each}
+	    </select>
 
-<select bind:value={selections} on:change={addOdds(selections)}>
-{#each selectionRange as value}<option {value}>{value}</option>{/each}
+	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={selections} on:change={addOdds(selections)}>
+    {#each selectionRange as value}<option {value}>{value}</option>{/each}
 </select>
 
 <div>
-<input class="text-black" bind:value={totalStake}>
+    <input class="border rounded-md border-neutral-700 bg-inherit" bind:value={totalStake}>
 </div>
 
 <div>
-{#each odds as bet,i}
-<div>
-<input class="text-black" bind:value={bet.value} placeholder="">
-<select bind:value={bet.outcome}>
+    {#each odds as bet,i}
+	<div>
+	    <input class="border rounded-md border-neutral-700 bg-inherit" bind:value={bet.value} placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-inherit" bind:value={bet.outcome}>
 {#each outcomes as outcome}
 <option {outcome}>{outcome}</option>
 {/each}
