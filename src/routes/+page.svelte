@@ -65,7 +65,7 @@
 	    </span>
 	</h1> 
 
- <div>
+	<div class ="border rounded-md border-neutral-700 p-2 w-max">
  <select bind:value={subset}>
 {#each subsetRange as value}<option {value}>{value}</option>{/each}
 </select>
@@ -91,6 +91,7 @@
 {/each}
 </div>
 
+<div class ="border rounded-md border-neutral-700 p-2 w-max">
 <div>
 Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
@@ -102,7 +103,8 @@ Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
 <div>
     Gains: {totalReturn}
 </div>
- </div>
+</div>
+</div>
 
  <h2>
      Envie de tenter ta chance ?
