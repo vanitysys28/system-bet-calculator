@@ -136,7 +136,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
  <button class="border rounded-md border-neutral-700 p-2 w-max bg-neutral-800">contact@test.com</button>
 
  <p>
-     Made with 🤍 by Guillaume Aubert
+     Made with 🤍 by <a href="https://https://github.com/vanitysys28/">Guillaume Aubert</a>
  </p>
      
 </main>
