@@ -106,7 +106,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
     Gains: {totalReturn}
 </div>
 </div>
-	</div>
+</div>
 
 	
  <h2 class="text-3xl font-bold text-center">
@@ -139,7 +139,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
  </div>
  
  <p class="text-center">
-     Made with 🤍 by <a href="https://https://github.com/vanitysys28/">Guillaume Aubert</a>
+     Made with 🤍 by <a href="https://github.com/vanitysys28/">Guillaume Aubert</a>
  </p>
      
 </main>
