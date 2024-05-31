@@ -59,7 +59,7 @@
 </script>
 
 <main> 
-	<h1 class="flex flex-col items-center text-3xl font-bold">Calculateur
+	<h1 class="flex flex-col items-center text-4xl font-bold">Calculateur
 	    <span>
 		Pari Système
 	    </span>
@@ -106,11 +106,11 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
 	</div>
 
- <h2 class="text-2xl font-bold">
+ <h2 class="text-3xl font-bold">
      Envie de tenter ta chance ?
  </h2>
 
- <span class="text-xl font-bold">
+ <span class="text-2xl font-bold">
      Inscris toi chez Unibet
  </span>
  <p>
@@ -120,7 +120,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
 
- <h2 class="flex flex-col text-2xl">
+ <h2 class="flex flex-col text-3xl">
  <span class="font-bold">
      Tu rencontres un problème
  </span>
