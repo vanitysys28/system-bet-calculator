@@ -59,7 +59,7 @@
 </script>
 
 <main> 
-	<h1 class="flex flex-col items-center text-4xl font-bold">Calculateur
+	<h1 class="flex flex-col items-center text-5xl font-bold">Calculateur
 	    <span>
 		Pari Système
 	    </span>
@@ -67,22 +67,23 @@
 
 	<div class ="flex flex-col items-center bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
 	    <div>
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={subset}>
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
 	    </select>
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={selections} on:change={addOdds(selections)}>
+	    /
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={selections} on:change={addOdds(selections)}>
 		{#each selectionRange as value}<option {value}>{value}</option>{/each}
 	    </select>
 	    </div>
 	    <div>
-		<input class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={totalStake}>
+		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={totalStake}>
 </div>
 
 <div>
     {#each odds as bet,i}
 	<div>
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={bet.value} placeholder="">
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900" bind:value={bet.outcome}>
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={bet.value} placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={bet.outcome}>
 {#each outcomes as outcome}
     <option {outcome}>{outcome}</option>
 {/each}
@@ -91,7 +92,7 @@
     {/each}
 </div>
 
-<div class ="border rounded-md border-neutral-700 p-2 w-max bg-neutral-900">
+<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-2">
     <div>
 	Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
     </div>
