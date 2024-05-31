@@ -65,8 +65,8 @@
 	    </span>
 	</h1> 
 
-	<div class ="flex flex-col items-center bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
-	    <div>
+	<div class ="bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
+	    <div class="text-center">
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
 	    </select>
@@ -75,7 +75,7 @@
 		{#each selectionRange as value}<option {value}>{value}</option>{/each}
 	    </select>
 	    </div>
-	    <div>
+	    <div class="text-center">
 		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={totalStake}>
 </div>
 
@@ -92,6 +92,7 @@
     {/each}
 </div>
 
+
 <div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-2">
     <div>
 	Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
@@ -107,7 +108,8 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
 	</div>
 
- <h2 class="text-3xl font-bold">
+	
+ <h2 class="text-3xl font-bold text-center">
      Envie de tenter ta chance ?
  </h2>
 
@@ -121,22 +123,22 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
 
- <h2 class="flex flex-col text-3xl">
- <span class="font-bold">
+ <h2 class="flex flex-col text-3xl font-bold text-center ">
      Tu rencontres un problème
- </span>
- <span>
+ <span class="font-normal">
      ou tu souhaites proposer une nouvelle fonctionnalité ?
  </span>
  </h2>
  
- <p>
+ <p class="text-center">
      Contacte-nous par email et fais-nous part de tes idées !
  </p>
 
- <button class="border rounded-md border-neutral-700 p-2 w-max bg-neutral-800">contact@test.com</button>
-
- <p>
+ <div class="flex justify-center">
+ <button class="border rounded-md border-neutral-700 p-2 w-max bg-neutral-800 text-center">contact@test.com</button>
+ </div>
+ 
+ <p class="text-center">
      Made with 🤍 by <a href="https://https://github.com/vanitysys28/">Guillaume Aubert</a>
  </p>
      
