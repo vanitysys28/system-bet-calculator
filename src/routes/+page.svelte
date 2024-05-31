@@ -92,19 +92,19 @@
 </div>
 
 <div class ="border rounded-md border-neutral-700 p-2 w-max">
-<div>
-Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
-</div>
+    <div>
+	Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
+    </div>
 
-<div>
-Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
+    <div>
+Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
 
 <div>
     Gains: {totalReturn}
 </div>
 </div>
-</div>
+	</div>
 
  <h2>
      Envie de tenter ta chance ?
