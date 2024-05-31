@@ -120,8 +120,8 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
 
- <h2 class="flex flex-col text-2xl font-bold">
- <span>
+ <h2 class="flex flex-col text-2xl">
+ <span class="font-bold">
      Tu rencontres un problème
  </span>
  <span>
