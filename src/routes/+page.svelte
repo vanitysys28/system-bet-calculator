@@ -114,7 +114,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 	</div>
    </section>
 	
- <section id="promotional" class="p-10">
+ <section id="promotional" class="p-10 bg-neutral-800">
 	<h2 class="text-3xl font-bold text-center">
 	  Envie de tenter ta chance ?
 	</h2>
