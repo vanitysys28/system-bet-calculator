@@ -83,18 +83,19 @@
 		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={totalStake} inputmode="numeric">
 </div>
 
-<div>
+
     {#each odds as bet,i}
 	<div>
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={bet.outcome}>
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.outcome}>
+	     
 {#each outcomes as outcome}
     <option {outcome}>{outcome}</option>
 {/each}
 	    </select>
-	</div>
+	 </div>
     {/each}
-</div>
+
 
 
 <div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-2">
