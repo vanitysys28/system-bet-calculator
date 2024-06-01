@@ -59,7 +59,7 @@
 </script>
 
 <main>
-  <section id="header">
+  <section id="header" class="p-10">
 	<h1 class="flex flex-col items-center text-5xl font-bold">Calculateur
 	    <span>
 		Pari Système
@@ -67,7 +67,7 @@
 	</h1> 
   </section>
   
-   <section id="calculator">
+   <section id="calculator" class="p-10">
 	<div class="flex justify-center">
 	<div class ="flex flex-col items-center bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
 	    <div>
@@ -112,9 +112,9 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
 </div>
 	</div>
 	</div>
-</section>
+   </section>
 	
- <section id="promotional">
+ <section id="promotional" class="p-10">
 	<h2 class="text-3xl font-bold text-center">
 	  Envie de tenter ta chance ?
 	</h2>
@@ -130,7 +130,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
  </p>
  </section>
  
- <section id="contact">    
+ <section id="contact" class="p-10">    
  <h2 class="flex flex-col text-3xl font-bold text-center ">
      Tu rencontres un problème
  <span class="font-normal">
