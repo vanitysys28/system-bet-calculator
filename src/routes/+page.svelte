@@ -85,7 +85,7 @@
 
 
     {#each odds as bet,i}
-	<div>
+	<div class="flex justify-center">
 	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.outcome}>
 	     
