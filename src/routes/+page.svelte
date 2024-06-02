@@ -69,7 +69,7 @@
   
    <section id="calculator" class="p-10">
 	<div class="flex justify-center mx-auto max-w-4xl">
-	<div class="flex flex-col items-center gap-3 bg-neutral-800 border rounded-md border-neutral-700 p-2 w-screen">
+	<div class="flex flex-col items-center py-5 gap-5 bg-neutral-800 border rounded-md border-neutral-700 p-2 w-screen">
 	    <div>
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-12 text-center" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
@@ -97,7 +97,7 @@
 
 
 
-<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-4">
+<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 py-4 px-20">
      <div>Mise unitaire: {#if unitStake > 0} {unitStake} {/if}</div>
       <div>Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}</div>
       <div>Gains: {totalReturn}</div>
