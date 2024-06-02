@@ -69,7 +69,7 @@
   
    <section id="calculator" class="p-10">
 	<div class="flex justify-center">
-	<div class ="flex flex-col items-center bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
+	<div class="flex flex-col items-center bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
 	    <div>
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
@@ -115,7 +115,7 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
    </section>
 	
  <section id="promotional" class="p-10 bg-neutral-800">
-<div class="mx-auto max-w-7xl">
+<div class="mx-auto max-w-4xl">
    <h2 class="text-3xl font-bold text-center">
 	  Envie de tenter ta chance ?
 	</h2>
