@@ -68,30 +68,30 @@
   </section>
   
    <section id="calculator" class="p-10">
-	<div class="flex justify-center">
-	<div class="flex flex-col items-center gap-3 bg-neutral-800 border rounded-md border-neutral-700 p-2 w-max">
+	<div class="flex justify-center mx-auto max-w-4xl">
+	<div class="flex flex-col items-center gap-3 bg-neutral-800 border rounded-md border-neutral-700 p-2 w-screen">
 	    <div>
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={subset}>
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-12 text-center" bind:value={subset}>
 		{#each subsetRange as value}<option {value}>{value}</option>{/each}
 	    </select>
 	    /
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={selections} on:change={addOdds(selections)}>
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-12 text-center" bind:value={selections} on:change={addOdds(selections)}>
 		{#each selectionRange as value}<option {value}>{value}</option>{/each}
 	    </select>
 	    </div>
-	    <div>
-		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center" bind:value={totalStake} inputmode="numeric">
+	    <div class="flex justify-center w-full">
+		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center w-1/4" bind:value={totalStake} inputmode="numeric">
 </div>
 
 
     {#each odds as bet,i}
-	<div class="flex justify-center gap-3">
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.outcome}>
+	<div class="flex justify-center gap-20 w-full">
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-1/4 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-1/4 text-center" bind:value={bet.outcome}>
 	     {#each outcomes as outcome}
 	       <option {outcome}>{outcome}</option>
 	     {/each}
-	    </select>
+	     </select>
 	 </div>
     {/each}
 
