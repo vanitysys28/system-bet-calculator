@@ -88,10 +88,9 @@
 	<div class="flex justify-center">
 	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-2/5 text-center" bind:value={bet.outcome}>
-	     
-{#each outcomes as outcome}
-    <option {outcome}>{outcome}</option>
-{/each}
+	     {#each outcomes as outcome}
+	       <option {outcome}>{outcome}</option>
+	     {/each}
 	    </select>
 	 </div>
     {/each}
@@ -151,10 +150,10 @@ Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
  </div>
 </section>
  
- <section id="footer">
+ <footer>
  <p class="text-center">
      Made with 🤍 by <a href="https://github.com/vanitysys28/">Guillaume Aubert</a>
  </p>
-    </section>
+    </footer>
      
 </main>
