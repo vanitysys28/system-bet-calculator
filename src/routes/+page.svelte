@@ -97,18 +97,10 @@
 
 
 
-<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-2">
-    <div>
-	Mise unitaire: {#if unitStake > 0} {unitStake} {/if}
-    </div>
-
-    <div>
-Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}
-</div>
-
-<div>
-    Gains: {totalReturn}
-</div>
+<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 p-4">
+     <div>Mise unitaire: {#if unitStake > 0} {unitStake} {/if}</div>
+      <div>Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}</div>
+      <div>Gains: {totalReturn}</div>
 </div>
 	</div>
 	</div>
