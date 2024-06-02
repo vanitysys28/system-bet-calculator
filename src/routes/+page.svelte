@@ -108,12 +108,12 @@
 	
  <section id="promotional" class="p-10 bg-neutral-800">
 <div class="mx-auto max-w-4xl">
-   <h2 class="text-3xl font-bold text-center">
+   <h2 class="text-2xl sm:text-3xl font-bold text-center">
 	  Envie de tenter ta chance ?
 	</h2>
 
 
- <h3 class="text-2xl font-bold mt-4">
+ <h3 class="text-xl sm:text-2xl font-bold mt-4">
      Inscris toi chez Unibet
  </h3>
  <p class="mt-4">
@@ -126,7 +126,7 @@
  </section>
  
  <section id="contact" class="p-10">    
- <h2 class="flex flex-col text-3xl font-bold text-center ">
+ <h2 class="flex flex-col text-2xl sm:text-3xl font-bold text-center ">
      Tu rencontres un problème
  <span class="font-normal">
      ou tu souhaites proposer une nouvelle fonctionnalité ?
