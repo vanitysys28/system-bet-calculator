@@ -11,10 +11,10 @@ const {
 module.exports = {
 	  content: ['./src/**/*.{html,js,svelte,ts}'],
 	  theme: {
-		      extend: {
-		      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },}
+	  fontFamily: {
+          sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+	  },
+	  extend: {}
 		    },
 	 plugins: [
     addVariablesForColors,
