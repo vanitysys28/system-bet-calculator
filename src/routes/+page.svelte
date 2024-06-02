@@ -80,14 +80,14 @@
 	    </select>
 	    </div>
 	    <div class="flex justify-center w-full">
-		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center w-1/4" bind:value={totalStake} inputmode="numeric">
+		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center sm:w-1/4 w-1/2" bind:value={totalStake} inputmode="numeric">
 </div>
 
 
     {#each odds as bet,i}
-	<div class="flex justify-center gap-20 w-full">
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-1/4 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
-	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 w-1/4 text-center" bind:value={bet.outcome}>
+	<div class="flex justify-center sm:gap-20 gap-10 w-full">
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
+	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.outcome}>
 	     {#each outcomes as outcome}
 	       <option {outcome}>{outcome}</option>
 	     {/each}
@@ -97,7 +97,7 @@
 
 
 
-<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 py-4 px-20">
+<div class ="border rounded-md border-neutral-700 w-max bg-neutral-900 py-4 sm:px-20 px-10">
      <div>Mise unitaire: {#if unitStake > 0} {unitStake} {/if}</div>
       <div>Nombre de paris générés: {#if totalBets > 0} {totalBets} {/if}</div>
       <div>Gains: {totalReturn}</div>
@@ -142,8 +142,8 @@
  </div>
 </section>
  
- <footer>
- <p class="text-center">
+ <footer class="pt-10">
+ <p class="text-center mb-4">
      Made with 🤍 by <a href="https://github.com/vanitysys28/">Guillaume Aubert</a>
  </p>
     </footer>
