@@ -113,10 +113,10 @@
 	</h2>
 
 
- <span class="text-2xl font-bold">
+ <h3 class="text-2xl font-bold mt-4">
      Inscris toi chez Unibet
- </span>
- <p>
+ </h3>
+ <p class="mt-4">
      Profite d'un bonus de bienvenue de 100€ si ton premier pari est perdant !
  </p>
  <p>
