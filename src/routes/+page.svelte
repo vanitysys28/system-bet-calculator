@@ -58,7 +58,7 @@
 
 </script>
 
-<main>
+<main class="bg-[url('/pattern.svg')]">
   <section id="header" class="p-10">
 	<h1 class="flex flex-col items-center text-5xl font-bold">Calculateur
 	    <span>
