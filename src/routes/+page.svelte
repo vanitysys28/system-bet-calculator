@@ -125,9 +125,11 @@
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
  </div>
+ <div>
  <a href="https://www.unibet.fr/register">
-   <img class="border rounded-md border-neutral-700 w-full h-full" src="https://i.unibet.fr/original//Bonus-Bienvenue_NEW3-LP_1280x340baf7b939-132f-4754-bfd6-dab28cab41412e8ee789-ca18-43ec-a811-2a367e029646.jpg">
-   </a>
+   <img class="border rounded-md border-neutral-700 basis-1/2" src="https://i.unibet.fr/original//Bonus-Bienvenue_NEW3-LP_1280x340baf7b939-132f-4754-bfd6-dab28cab41412e8ee789-ca18-43ec-a811-2a367e029646.jpg">
+ </a>
+ </div>
 </div>
  </div>
  </section>
