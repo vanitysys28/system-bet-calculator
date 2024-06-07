@@ -117,7 +117,7 @@
      Inscris toi chez Unibet
  </h3>
  <div class="flex gap-2">
- <div>
+ <div class="basis-1/2">
  <p class="mt-4">
      Profite d'un bonus de bienvenue de 100€ si ton premier pari est perdant !
  </p>
@@ -125,7 +125,7 @@
      Ton bonus est valable pour toute nouvelle inscription, et sera crédité sous 24 heures après le résultat de ton premier pari.
  </p>
  </div>
- <div>
+ <div class="basis-1/2">
  <a href="https://www.unibet.fr/register">
    <img class="border rounded-md border-neutral-700 basis-1/2" src="https://i.unibet.fr/original//Bonus-Bienvenue_NEW3-LP_1280x340baf7b939-132f-4754-bfd6-dab28cab41412e8ee789-ca18-43ec-a811-2a367e029646.jpg">
  </a>
