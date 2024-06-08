@@ -80,13 +80,13 @@
 	    </select>
 	    </div>
 	    <div class="flex justify-center w-full">
-		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center sm:w-1/4 w-1/2" bind:value={totalStake} type="number">
+		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center sm:w-1/4 w-1/2 appearance-none" bind:value={totalStake} type="number">
 </div>
 
 
     {#each odds as bet,i}
 	<div class="flex justify-center sm:gap-20 gap-10 w-full">
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.value} type="number" placeholder="">
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center appearance-none" bind:value={bet.value} type="number" placeholder="">
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.outcome}>
 	     {#each outcomes as outcome}
 	       <option {outcome}>{outcome}</option>
