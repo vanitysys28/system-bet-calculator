@@ -80,13 +80,13 @@
 	    </select>
 	    </div>
 	    <div class="flex justify-center w-full">
-		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center sm:w-1/4 w-1/2" bind:value={totalStake} inputmode="numeric">
+		<input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 text-center sm:w-1/4 w-1/2" bind:value={totalStake} type="number">
 </div>
 
 
     {#each odds as bet,i}
 	<div class="flex justify-center sm:gap-20 gap-10 w-full">
-	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.value} inputmode="numeric" placeholder="">
+	    <input class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.value} type="number" placeholder="">
 	    <select class="border rounded-md border-neutral-700 bg-neutral-900 p-2 sm:w-1/4 w-1/2 text-center" bind:value={bet.outcome}>
 	     {#each outcomes as outcome}
 	       <option {outcome}>{outcome}</option>
@@ -147,7 +147,7 @@
  </p>
 
  <div class="flex justify-center mt-4">
- <button class="border rounded-md border-neutral-700 p-2 w-max bg-neutral-800 text-center">contact@test.com</button>
+ <button class="border rounded-md border-neutral-700 p-2 w-max bg-neutral-800 text-center">contact@calculateurparisysteme.gg</button>
  </div>
 </section>
  
